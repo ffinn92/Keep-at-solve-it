@@ -14,6 +14,7 @@
   - 문제 선택 / 5분
   - 개인별로 이슈내용 공유 / 13분이내 (1인 기준)
   - 시간이 남는다면 남은시간은 자유토론
+  - 스터디가 끝난 `Issues`는 close한다.
 - 진행일 전까지 `Issues`에 문제 풀이를 등록한다.
   - [문제 풀이 공유 방법](https://github.com/ffinn92/Keep-at-solve-it/blob/main/Form/create_issue_form.md)
   - 문제 풀이 공유 방법 양식은 꼭 모두 다 채울 필요 없음 상황에 맞게 채우기
