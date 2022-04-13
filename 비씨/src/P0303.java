@@ -18,15 +18,19 @@ public class P0303 {
             .map(Integer::parseInt)
             .collect(Collectors.toList());
 
+        int sum = 0;
 
-        int max = 0;
+        for (int i = 0; i < given; i++) {
+            sum += list.get(i);
+        }
+
+        int max = sum;
+
         for (int i = 0; i < totalCount - given; i++) {
-            int temp = 0;
-            for (int j = 0; j < given; j++) {
-                temp += list.get(i + j);
-            }
-            if (max < temp) {
-                max = temp;
+            sum -= list.get(i);
+            sum+= list.get(i+given);
+            if (max < sum) {
+                max = sum;
             }
         }
 
