@@ -20,56 +20,31 @@ public class P0301 {
 
     public static String solution(int length1, String[] arrA, int length2, String[] arrB) {
         StringBuilder sb = new StringBuilder();
-        int[] result = new int[length1 + length2];
-
         int a = 0;
         int b = 0;
-        int r = 0;
 
         while (a < length1 && b < length2) {
 
-            if (Integer.parseInt(arrA[a]) < Integer.parseInt(arrB[b])) {
-                result[r] = Integer.parseInt(arrA[a]);
+            if (Integer.parseInt(arrA[a]) <= Integer.parseInt(arrB[b])) {
+                sb.append(arrA[a]).append(" ");
                 a++;
-                r++;
-                continue;
-            }
-            if (Integer.parseInt(arrA[a]) > Integer.parseInt(arrB[b])) {
-                result[r] = Integer.parseInt(arrB[b]);
+            } else {
+                sb.append(arrB[b]).append(" ");
                 b++;
-                r++;
-                continue;
             }
-            result[r] = Integer.parseInt(arrA[a]);
-            r++;
-            result[r] = Integer.parseInt(arrB[b]);
-            r++;
+        }
+
+        while (a < length1) {
+            sb.append(arrA[a]).append(" ");
             a++;
+        }
+
+        while (b < length2) {
+            sb.append(arrB[b]).append(" ");
             b++;
         }
-
-        if (a == length1) {
-            for (int n = b; n < length2; n++) {
-                result[r] = Integer.parseInt(arrB[n]);
-                r++;
-            }
-            for (int num : result) {
-                sb.append(num).append(" ");
-            }
-            sb.deleteCharAt(sb.length() - 1);
-            return sb.toString();
-        }
-
-        if (b == length2) {
-            for (int n = a; n < length1; n++) {
-                result[r] = Integer.parseInt(arrA[n]);
-                r++;
-            }
-            for (int num : result) {
-                sb.append(num).append(" ");
-            }
-            sb.deleteCharAt(sb.length() - 1);
-        }
+        sb.deleteCharAt(sb.length() - 1);
         return sb.toString();
+
     }
 }
